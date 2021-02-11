@@ -57,7 +57,7 @@ if (isset($_POST['salvar'])) {
                     }
                     ?>
                 </select>
-                <label for="name">Nome</label>
+                <label for="name">Cores</label>
 
             </form>
         </div>
@@ -87,7 +87,7 @@ if (isset($_POST['salvar'])) {
                             </tr>",
                             $color->color_id,
                             $color->name,
-                            "removerVinculo.php?color_id=" . $color->color_id . "&user_id=" . $id,
+                            "removerVinculo.php?color_id=" . $color->color_id . "&user_id=" . $id
                         );
                     }
                     ?>

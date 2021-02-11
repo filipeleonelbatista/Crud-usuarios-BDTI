@@ -1,6 +1,5 @@
 <?php
 
-require '../../components/header.php';
 require '../../connection.php';
 
 function escape()
@@ -35,8 +34,8 @@ if (isset($_POST['salvar'])) {
     escape();
 }
 
+require '../../components/header.php';
 ?>
-
 <div class="content">
     <section id="cadastrar">
         <div class="container">

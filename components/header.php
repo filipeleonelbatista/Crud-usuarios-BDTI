@@ -1,13 +1,20 @@
 <?php 
 
-if(str_contains($_SERVER["PHP_SELF"], 'users')){
+$string = substr($_SERVER["PHP_SELF"], 0, 12);
+
+if($string == "/pages/users"){
   $users = "index.php";
   $colors = "../colors/colors.php";
+  $usersActive = true;
+  $colorsActive = false;
 }
-if(str_contains($_SERVER["PHP_SELF"], 'colors')){
+if($string == "/pages/color"){
   $users = "../users/index.php";
   $colors = "colors.php";
+  $usersActive = false;
+  $colorsActive = true;
 }
+
 
 ?>
 
@@ -26,8 +33,7 @@ if(str_contains($_SERVER["PHP_SELF"], 'colors')){
 </head>
 
 <body>
-    <ul class="header">
-        <!-- <li>CRUD - Usuarios [PHP]</li> -->
-        <li><a href="<?php echo $users;?>">Usuários</a></li>
-        <li><a href="<?php echo $colors;?>">Cores</a></li>
-    </ul>
+<ul class="header">
+    <li <?php echo $usersActive ?  "class='active'" : "";?>><a href="<?php echo $users;?>">Usuários</a></li>
+    <li <?php echo $colorsActive ?  "class='active'" :  "";?> ><a href="<?php echo $colors;?>">Cores</a></li>
+</ul>

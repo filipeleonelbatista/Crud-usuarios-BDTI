@@ -1,11 +1,10 @@
 <?php
 
-require '../../components/header.php';
 require '../../connection.php';
 
 function escape()
 {
-    header("Location: colors.php");
+    header("Location: ./colors.php");
     return 0;
 }
 
@@ -33,6 +32,8 @@ if (isset($_POST['salvar'])) {
     escape();
 }
 
+require '../../components/header.php';
+
 ?>
 
 <div class="content">
@@ -40,7 +41,7 @@ if (isset($_POST['salvar'])) {
         <div class="container">
             <h2>Editar cor</h2>
             <form method="post" action="">
-                <a tabindex="3" href="../../index.php">cancelar</a>
+                <a tabindex="3" href="colors.php">cancelar</a>
 
                 <button tabindex="2" type="submit" name="salvar">Salvar</button>
 

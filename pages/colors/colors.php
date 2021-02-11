@@ -58,7 +58,7 @@ if (isset($_POST['salvar'])) {
                             $color->id,
                             $color->name,
                             "editar.php?id=" . $color->id,
-                            "excluir.php?id=" . $color->id,
+                            "excluir.php?id=" . $color->id
                         );
                     }
                     ?>

@@ -67,7 +67,7 @@ if (isset($_POST['salvar'])) {
                             $user->email,
                             "editar.php?id=" . $user->id,
                             "excluir.php?id=" . $user->id,
-                            "../colors/vincular.php?id=" . $user->id,
+                            "../colors/vincular.php?id=" . $user->id
                         );
                     }
                     ?>
