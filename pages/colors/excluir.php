@@ -16,27 +16,43 @@ if (empty($id)) {
 
 $connection = new Connection();
 
-$result = $connection->deleteColorUser($id);
-$result = $connection->deleteColor($id);
-
-
 require '../../components/header.php';
-?>
 
-<div class="content">
-    <section id="cadastrar">
-        <div class="container">
-            <?php
-            if ($result == 1) {
-                echo  "<h2>Cor excluida</h2>";
-            } else {
-                echo  "<h2>Não foi possivel excluir a cor</h2>";
-            }
-            ?>
-            <a href="colors.php">Voltar</a>
+if (isset($_POST['deletar'])) {
+
+    $result = $connection->deleteColorUser($id);
+    $result = $connection->deleteColor($id);
+
+    ?>
+        <div class="content">
+            <section id="cadastrar">
+                <div class="container">
+                    <?php
+                    if ($result == 1) {
+                        echo  "<h2>Cor excluida</h2>";
+                    } else {
+                        echo  "<h2>Não foi possivel excluir a cor</h2>";
+                    }
+                    ?>
+                    <a href="colors.php">Voltar</a>
+                </div>
+            </section>
         </div>
-    </section>
-</div>
+    <?php
+}else{
+    ?>
+        <div class="content">
+            <section id="cadastrar">
+                <div class="container">
+                    <h2>Deseja excluir esta cor</h2>
+                    <form method="post" action="">                
+                        <button tabindex="1" type="submit" name="deletar">Excluir</button>
+                    </form>
+                    <a href="colors.php">Voltar</a>    
+                </div>
+            </section>
+        </div>
+    <?php
+}
 
-<?php
 require '../../components/footer.php';
